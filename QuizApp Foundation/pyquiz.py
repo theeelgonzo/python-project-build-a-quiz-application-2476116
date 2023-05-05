@@ -11,6 +11,9 @@ class QuizApp:
         self.greeting()
 
         # TODO: ask the user for their name
+        self.username = input('What is your name? ')
+        print(f'Welcome, {self.username}.')
+        print()
 
     def greeting(self):
         print("-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~")
@@ -40,8 +43,36 @@ class QuizApp:
         # TODO: get the user's selection and act on it. This loop will
         # run until the user exits the app
         selection = ""
+        while(True):
+            selection = input('Selection? ')
 
+            if len(selection) == 0:
+                self.menu_error()
+                continue
 
+            selection = selection.capitalize()
+
+            if selection[0] == 'E':
+                self.goodbye()
+                break
+            elif selection[0] == 'M':
+                self.menu_header()
+                continue
+            elif selection[0] == 'L':
+                print('\nAvailable quizzes Are: ')
+                # TODO list the quizzes
+                print('-----------------------------\n')
+                continue
+            elif selection[0] == 'T':
+                try:
+                    quiznumber = int(input('Quiz number: '))
+                    print(f'You have selected quiz {quiznum}')
+                    # TODO start the quiz
+                except:
+                    self.menu_error()
+            else:
+                self.menu_error
+                continue
     # This is the entry point to the program
     def run(self):
         # Execute the startup routine - ask for name, print greeting, etc
