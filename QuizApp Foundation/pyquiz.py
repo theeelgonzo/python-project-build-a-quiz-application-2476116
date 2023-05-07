@@ -66,7 +66,7 @@ class QuizApp:
             elif selection[0] == 'T':
                 try:
                     quiznumber = int(input('Quiz number: '))
-                    print(f'You have selected quiz {quiznum}')
+                    print(f'You have selected quiz {quiznumber}')
                     # TODO start the quiz
                 except:
                     self.menu_error()
