@@ -24,7 +24,7 @@ class Quiz:
         print("*******************************************")
         # TODO: Print the results
         print(f'RESULTS for {quiztaker}')
-        print(fDate: {datetime.datetime.today()})
+        print(f'Date: {datetime.datetime.today()}')
         print(f'QUESTIONS: {self.correct_count} out of {len(self.questions)} correct.')
         print(f'SCORE: {self.score} points out of possible {self.total_points}')
 
